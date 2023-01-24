@@ -32,7 +32,3 @@ class ExcelStudend:
             writer = csv.writer(file, delimiter=',')
             writer.writerow(["Full name", "Age", "School", "Mobile phone", "Path to photo", "Email",
                              "Family","Mom's number", "Dad's number", "Mom's work", "Dad's work", "Floor", "Group"])
-
-
-excel = ExcelStudend('sfs', 3, 'sdf', 'sdf', 'sdf', 'sdf', 'sdf', 'sdf', 'sdf', 'sdf', 'sdf')
-excel.run()
