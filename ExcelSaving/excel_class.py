@@ -1,6 +1,8 @@
 import csv
 import os
 class ExcelStudend:
+
+
     def __init__(self, fullname: str, age: int,
                  school: str, phone_number: str, photo: str, email: str, family: str, mom_number: str,
                  dad_number: str, mom_work: str, dad_work: str, floor: str, group: str):
@@ -17,16 +19,22 @@ class ExcelStudend:
         self.dad_work = dad_work
         self.floor = floor
         self.group = group
+
+
     def run(self):
         if os.stat("data/students.csv").st_size == 0:
             ExcelStudend.add_columns_name(self)
         ExcelStudend.add_main_information(self)
+
+
     def add_main_information(self):
         with open('data/students.csv', 'a', newline='') as file:
             writer = csv.writer(file, delimiter=',')
             writer.writerow([self.fullname, self.age, self.school, self.phone_number, self.photo, self.email,
                              self.family, self.mom_number, self.dad_number, self.mom_work, self.dad_work, self.floor,
                              self.group])
+
+
     def add_columns_name(self):
         with open('data/students.csv', 'a', newline='') as file:
             writer = csv.writer(file, delimiter=',')
